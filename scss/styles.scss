@@ -1,0 +1,130 @@
+$typeColours: (
+  "fire": #ff7402,
+  "grass": #33a165,
+  "steel": #00858a,
+  "water": #0050ac,
+  "psychic": #c90086,
+  "ground": #c90086,
+  "ice": #70deff,
+  "flying": #5d4e75,
+  "ghost": #4d5b64,
+  "normal": #753845,
+  "poison": #7e0058,
+  "rock": #6e1a00,
+  "fighting": #634136,
+  "dark": #272625,
+  "bug": #6e1a00,
+  "dragon": #00c431,
+  "electric": #bba909,
+  "fairy": #d31c81,
+  "unknow": #757575,
+  "shadow": #29292c,
+);
+body {
+  background-color: rgb(226, 84, 84);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 100px 150px 100px 150px;
+}
+.target {
+  padding: 10px;
+  margin: 5;
+  border-style: solid;
+  border-color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 3px;
+}
+.zoom {
+  padding: 5px;
+  transition: transform 0.2s; /* Animation */
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+}
+.zoom:hover {
+  transform: scale(1.2);
+}
+.info {
+  font-size: 10px;
+  color: white;
+}
+@each $type, $i in $typeColours {
+  .div {
+    &_#{$type} {
+      background-image: linear-gradient($i, $i);
+    }
+  }
+  @each $type2, $i2 in $typeColours {
+    .div {
+      &_#{$type}#{$type2} {
+        background-image: conic-gradient($i2, $i);
+      }
+    }
+  }
+}
+ul.navigation {
+  list-style-type: none;
+  margin: 10px 0px 0px 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(211, 52, 52);
+  border-color: rgb(211, 52, 52);
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 5px;
+}
+ul.navigation li,
+ul.navigation img {
+  float: left;
+}
+ul.navigation li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+.image {
+  width: 45px;
+}
+@media screen and (max-width: 850px) {
+  .zoom {
+    padding: 5px;
+    transition: transform 0.2s; /* Animation */
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 50px 50px 50px;
+  }
+  .info{
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .zoom {
+    padding: 5px;
+    transition: transform 0.2s; /* Animation */
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 50px 50px 50px;
+  }
+  .info{
+    font-size: 1.2rem;
+  }
+}
