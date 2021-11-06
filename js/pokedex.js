@@ -49,6 +49,7 @@ async function loadInitialView() {
   for (const iterator of pokemons) {
     await createViewAsync(iterator);
   }
+  createNavigator();
 }
 
 async function loadPaginated() {
@@ -66,5 +67,4 @@ async function loadPaginated() {
 
 const pokemonCount = 151;
 let count = 24;
-loadInitialView();
-createNavigator();
+window.onload = loadInitialView();
