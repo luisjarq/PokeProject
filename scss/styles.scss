@@ -20,15 +20,42 @@ $typeColours: (
   "unknow": #757575,
   "shadow": #29292c,
 );
+$colorLight: rgb(226, 84, 84);
+$colorDark1: rgb(211, 52, 52);
 body {
-  background-color: rgb(226, 84, 84);
+  background-color: $colorLight;
   font-family: Arial, Helvetica, sans-serif;
 }
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 100px 150px 100px 150px;
+  margin: 100px 150px 50px 150px;
+}
+.navigator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.navigator_label {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  height: 5px;
+  margin: 5px;
+  font-weight: bold;
+}
+.navigator_button {
+  display: block;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+  border-color: transparent;
+}
+.navigator_button:hover{
+  background-color: $colorDark1;
 }
 .target {
   padding: 10px;
@@ -72,8 +99,8 @@ ul.navigation {
   margin: 10px 0px 0px 10px;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(211, 52, 52);
-  border-color: rgb(211, 52, 52);
+  background-color: $colorDark1;
+  border-color: $colorDark1;
   border-style: solid;
   border-radius: 5px;
   border-width: 5px;
@@ -106,7 +133,7 @@ ul.navigation li a {
     justify-content: center;
     margin: 50px 50px 50px 50px;
   }
-  .info{
+  .info {
     font-size: 1rem;
   }
 }
@@ -124,7 +151,7 @@ ul.navigation li a {
     justify-content: center;
     margin: 50px 50px 50px 50px;
   }
-  .info{
+  .info {
     font-size: 1.2rem;
   }
 }
